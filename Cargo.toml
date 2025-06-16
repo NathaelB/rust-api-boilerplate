@@ -3,4 +3,24 @@ name = "boilerplate-api"
 version = "0.1.0"
 edition = "2024"
 
+[[bin]]
+path = "src/bin/main.rs"
+name = "api"
+
+[lib]
+path = "src/lib/lib.rs"
+name = "lib"
+
 [dependencies]
+axum = "0.8.4"
+clap = { version = "4.5.32", features = ["derive", "env"] }
+dotenv = "0.15.0"
+serde = "1.0.219"
+serde_json = "1.0.140"
+snafu = "0.8.6"
+tokio = { version = "1.45.1", features = ["rt-multi-thread"] }
+tower = "0.5.2"
+tower-http = { version = "0.6.6", features = ["cors", "trace"] }
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["json"] }
+typeshare = "1.0.4"
